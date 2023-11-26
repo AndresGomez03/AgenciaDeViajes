@@ -1,12 +1,15 @@
+create database agenciaviajes;
 
---CREAR TABLAS
+-- Recordar mantener el esquema de la bd como default
+
+-- CREAR TABLAS
 CREATE TABLE cliente (
-    rut INT NOT NULL,
+    rut INT NOT NULL ,
     nombre_cliente VARCHAR(50),
     Apellido_paterno VARCHAR(30),
     Apellido_materno VARCHAR(30),
     correo VARCHAR(50),
-    n_telefono INT,
+    n_telefono INT
 );
 
 CREATE TABLE vuelo (

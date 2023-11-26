@@ -19,14 +19,13 @@ fetch("http://localhost:3000/vuelo")
     .catch(error => console.log(error));
 
 const mostrarv = (datos)=>{
-    const contenedor = document.querySelector("#tablavuelos")
+    const contenedor = document.querySelector(".table")
     datos.forEach(element => {
 
         const col = document.createElement("div")
         col.innerHTML = 
         `
-        
-      <tbody>
+        <tbody>
         <tr>
           <td>${element.id_vuelo}</td>
           <td>${element.hora_partida}</td>
@@ -39,7 +38,7 @@ const mostrarv = (datos)=>{
           <td>${element.pais_destino}</td>
 
         </tr>
-      </tbody>
+        </tbody>
         `
         contenedor.appendChild(col);
     });

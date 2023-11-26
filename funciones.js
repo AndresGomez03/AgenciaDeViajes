@@ -22,24 +22,18 @@ const mostrarv = (datos)=>{
     const contenedor = document.querySelector("#tablavuelos")
     datos.forEach(element => {
 
-        const col = document.createElement("div")
+        const col = document.createElement("tr")
         col.innerHTML = 
         `
-        
-      <tbody>
-        <tr>
-          <td>${element.id_vuelo}</td>
-          <td>${element.hora_partida}</td>
-          <td>${element.hora_llegada}</td>
-          <td>${element.ciudad_origen}</td>
-          <td>${element.ciudad_destino}</td>
-          <td>${element.aeropuerto_origen}</td>
-          <td>${element.aeropuerto_destino}</td>
-          <td>${element.pais_origen}</td>
-          <td>${element.pais_destino}</td>
-
-        </tr>
-      </tbody>
+			<td>${element.id_vuelo}</td>
+			<td>${element.hora_partida}</td>
+			<td>${element.hora_llegada}</td>
+			<td>${element.ciudad_origen}</td>
+			<td>${element.ciudad_destino}</td>
+			<td>${element.aeropuerto_origen}</td>
+			<td>${element.aeropuerto_destino}</td>
+			<td>${element.pais_origen}</td>
+			<td>${element.pais_destino}</td>
         `
         contenedor.appendChild(col);
     });

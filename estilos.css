@@ -1,0 +1,25 @@
+.opciones{
+    background-color: aqua;
+}
+
+.opcion{
+    border: 3px solid black;
+    padding: 5px;
+    width: 300px;
+    height: 200px;
+    margin: 10px 20px;
+    float: left;
+}
+h1{
+    text-align: center;
+}
+h3{
+    text-align: center;
+}
+h5{
+    text-align: center;
+}
+.btn{
+    display: flex;
+    justify-content: center;
+}

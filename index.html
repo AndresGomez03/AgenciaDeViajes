@@ -17,109 +17,101 @@
         <H3>¿Qué acción desea realizar?</H3>
         <div class="opciones">
             <div class="opcion">
+              <!-- REGISTRAR AL CLIENTE ------------------------------------------------------------------------------ -->
                 <h5>Registrar cliente</h5>
                 <p>Registrarse le permitirá realizar una reserva.</p>
                 <form class="formulario">
                     <div class="mb-3">
                       <label class="form-label">Ingrese su Rut</label>
-                      <input type="number" class="form-control">
+                      <input type="number" class="form-control" id="rut_ingresar">
                       <div class="form-text">Sin puntos ni digito verificador.</div>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Ingrese su Nombre</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" id="nom_ingresar">
                       </div>
                       <div class="mb-3">
                         <label class="form-label">Ingrese su Apellido Paterno</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" id="app_ingresar">
                       </div>
                       <div class="mb-3">
                         <label class="form-label">Ingrese su Apellido Materno</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" id="apm_ingresar">
                       </div>
                       <div class="mb-3">
                         <label class="form-label">Ingrese su correo electronico</label>
-                        <input type="email" class="form-control">
+                        <input type="email" class="form-control" id="correo_ingresar">
                       </div>
                     <div class="mb-3">
                       <label class="form-label">Ingrese su numero de telefono</label>
-                      <input type="number" class="form-control">
+                      <input type="number" class="form-control" id="telefono_ingresar">
                     </div>
-                    <button type="submit" class="btn btn-outline-success">Enviar</button>
+                    <button type="submit" class="btn btn-outline-success" id="btn_reg_cli">Registrar</button>
                 </form>
             </div>
             <div class="opcion">
+              <!-- REALIZAR RESERVA DE VUELO ------------------------------------------------------------------------------ -->
                 <h5>Realizar reserva de vuelo</h5>
                 <p>Para realizar una reserva deberá haberse registrado anteriormente y tan solo deberá ingresar su rut.</p>
                 <form class="formulario">
                     <div class="mb-3">
                       <label class="form-label">Ingrese su Rut</label>
-                      <input type="number" class="form-control">
+                      <input type="number" class="form-control" id="rut_reserva">
                       <div class="form-text">Sin puntos ni digito verificador.</div>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Ingrese su Nombre</label>
-                        <input type="text" class="form-control">
+                        <label class="form-label">Ingrese la ciudad de origen</label>
+                        <input type="text" class="form-control" id="ciudad_origen_reserva">
                       </div>
                       <div class="mb-3">
-                        <label class="form-label">Ingrese su Apellido Paterno</label>
-                        <input type="text" class="form-control">
+                        <label class="form-label">Ingrese la ciudad de destino</label>
+                        <input type="text" class="form-control" id="ciudad_destino_reserva">
                       </div>
-                      <div class="mb-3">
-                        <label class="form-label">Ingrese su Apellido Materno</label>
-                        <input type="text" class="form-control">
-                      </div>
-                      <div class="mb-3">
-                        <label class="form-label">Ingrese su correo electronico</label>
-                        <input type="email" class="form-control">
-                      </div>
-                    <div class="mb-3">
-                      <label class="form-label">Ingrese su numero de telefono</label>
-                      <input type="number" class="form-control">
-                    </div>
                     <button type="submit" class="btn btn-outline-success">Enviar</button>
                 </form>
                 <button type="button" class="btn btn-outline-primary">Realizar reserva</button>
             </div>
             <div class="opcion">
+              <!-- CONSULTAR POR RESERVA ------------------------------------------------------------------------------ -->
                 <h5>Consultar reserva</h5>
                 <p>Para consultar por su reserva, debe haberse registrado y tener una reserva.</p>
                 <form class="formulario">
                     <div class="mb-3">
                       <label class="form-label">Ingrese su Rut</label>
-                      <input type="number" class="form-control">
+                      <input type="number" class="form-control" id="rut_consulta_reserva">
                       <div class="form-text">Sin puntos ni digito verificador.</div>
                     </div>
                     <button type="submit" class="btn btn-outline-success">Consultar</button>
                 </form>
             </div>
             <div class="opcion">
+              <!-- MODIFICAR DATOS DEL CLIENTE ------------------------------------------------------------------------------ -->
                 <h5>Modificar datos cliente</h5>
                 <p>Esto le permitirá actualizar su información.</p>
                 <form class="formulario">
                     <div class="mb-3">
                       <label class="form-label">Ingrese su Rut</label>
-                      <input type="number" class="form-control">
+                      <input type="number" class="form-control" id="rut_modificar_datos">
                       <div id="emailHelp" class="form-text">Sin puntos ni digito verificador.</div>
                     </div>
                     <button type="submit" class="btn btn-outline-success">Enviar</button>
                 </form>
-                <button type="button" class="btn btn-outline-primary">Modificar datos</button>
             </div>
             <div class="opcion">
+              <!-- CANCELAR RESERVA DE VUELO ------------------------------------------------------------------------------ -->
                 <h5>Cancelar reserva</h5>
                 <p>Si cancela su reserva, no la podrá recuperar.</p>
                 <form class="formulario">
                     <div class="mb-3">
                       <label class="form-label">Ingrese su Rut</label>
-                      <input type="number" class="form-control">
+                      <input type="number" class="form-control" id="rut_cancelar_reserva">
                       <div class="form-text">Sin puntos ni digito verificador.</div>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Ingrese el Id de su vuelo</label>
-                        <input type="number" class="form-control">
+                        <input type="number" class="form-control" id="id_vuelo_cancelar_reserva">
                       </div>
-                    <button type="submit" class="btn btn-outline-danger">Cancelar reserva</button>
+                    <button type="submit" class="btn btn-outline-danger" id="cancelar_reserva">Cancelar reserva</button>
                 </form>
             </div>
         </div>

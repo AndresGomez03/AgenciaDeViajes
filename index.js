@@ -10,5 +10,5 @@ app.get('/cliente',async(req,res)=>{
     res.send(resultado);
 })
 
-app.listen(3000)
-console.log("Servidor esuchando en el puerto 3000")
+app.listen(3000);
+console.log("Servidor esuchando en el puerto 3000");

@@ -22,10 +22,12 @@ app.get('/vuelo',async(req,res)=>{
     res.send(resultado);
 })
 
-app.get('/agregar/:rut_ingresar/:nombre_ingresar/:app_ingresar/:apm_ingresar/correo_ingresar/:telefono_ingresar',function(req,res){
-    let nombre = req.params.nombre_ingresar;
-    let rut = req.params.rut_ingresar;
-    console.log(nombre,rut);
+// REGISTRAR CLIENTE
+
+app.get('/agregar', async(req,res)=>{
+    const {rut} = req.body;
+    const [resultado] = await pool.query('select * from cliente where rut = (?) and nombre_cliente = (?) and apellido_paterno = (?) and apellido_materno = (?) and correo = (?) and n_telefono = (?)',[rut,nombre,app,apm,correo,telefono]);
+    res.send(resultado);
 })
 
 app.listen('3000',function(){

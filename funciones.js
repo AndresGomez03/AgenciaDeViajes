@@ -13,6 +13,8 @@ const btn_reg = document.querySelector('#btn_reg_cli');
   //  window.location.href = `agregar/${rut_ingresar.value}/${nombre_ingresar.value}`
 //})
 
+// Mostrar vuelos disponibles en pantalla
+
 fetch("http://localhost:3000/vuelo")
     .then(res => res.json())
     .then(datos => mostrarv(datos)) //aqui llamo a la funcion mostrar y me renderisa los datos 
@@ -38,3 +40,30 @@ const mostrarv = (datos)=>{
         contenedor.appendChild(col);
     });
 } 
+
+// Mostrar la reserva consultada por el cliente
+
+fetch("http://localhost:3000/vuelo")
+    .then(res => res.json())
+    .then(datos => mostrarv(datos)) //aqui llamo a la funcion mostrar y me renderisa los datos 
+    .catch(error => console.log(error));
+
+
+const cons_reserva = (datos_reserva)=>{
+    const container = document.querySelector(".list-group-flush")
+    datos_reserva.forEach(elemento=>{
+
+        const col = document.createElement("li")
+        col.innerHTML = `
+    
+        <li class="list-group-item">${elemento.id_reserva}</li>
+        <li class="list-group-item">${elemento.id_estado_reserva}</li>
+        <li class="list-group-item">${elemento.rut}</li>
+        <li class="list-group-item">${elemento.id_vuelo}</li>
+        
+    
+        `
+
+    })
+    
+}

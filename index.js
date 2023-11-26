@@ -12,4 +12,3 @@ app.get('/cliente',async(req,res)=>{
 
 app.listen(3000)
 console.log("Servidor esuchando en el puerto 3000")
-

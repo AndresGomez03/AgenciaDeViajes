@@ -23,7 +23,7 @@
                     <div class="mb-3">
                       <label class="form-label">Ingrese su Rut</label>
                       <input type="number" class="form-control">
-                      <div id="emailHelp" class="form-text">Sin puntos ni digito verificador.</div>
+                      <div class="form-text">Sin puntos ni digito verificador.</div>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Ingrese su Nombre</label>
@@ -47,7 +47,6 @@
                     </div>
                     <button type="submit" class="btn btn-outline-success">Enviar</button>
                 </form>
-                <a href="RegCliente.html" target="_blank"><button type="button" class="btn btn-outline-primary">Crear cliente</button></a>
             </div>
             <div class="opcion">
                 <h5>Realizar reserva de vuelo</h5>
@@ -56,7 +55,7 @@
                     <div class="mb-3">
                       <label class="form-label">Ingrese su Rut</label>
                       <input type="number" class="form-control">
-                      <div id="emailHelp" class="form-text">Sin puntos ni digito verificador.</div>
+                      <div class="form-text">Sin puntos ni digito verificador.</div>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Ingrese su Nombre</label>
@@ -85,17 +84,43 @@
             <div class="opcion">
                 <h5>Consultar reserva</h5>
                 <p>Para consultar por su reserva, debe haberse registrado y tener una reserva.</p>
-                <button type="button" class="btn btn-outline-primary">Consultar reserva</button>
+                <form class="formulario">
+                    <div class="mb-3">
+                      <label class="form-label">Ingrese su Rut</label>
+                      <input type="number" class="form-control">
+                      <div class="form-text">Sin puntos ni digito verificador.</div>
+                    </div>
+                    <button type="submit" class="btn btn-outline-success">Consultar</button>
+                </form>
             </div>
             <div class="opcion">
                 <h5>Modificar datos cliente</h5>
                 <p>Esto le permitirá actualizar su información.</p>
+                <form class="formulario">
+                    <div class="mb-3">
+                      <label class="form-label">Ingrese su Rut</label>
+                      <input type="number" class="form-control">
+                      <div id="emailHelp" class="form-text">Sin puntos ni digito verificador.</div>
+                    </div>
+                    <button type="submit" class="btn btn-outline-success">Enviar</button>
+                </form>
                 <button type="button" class="btn btn-outline-primary">Modificar datos</button>
             </div>
             <div class="opcion">
                 <h5>Cancelar reserva</h5>
                 <p>Si cancela su reserva, no la podrá recuperar.</p>
-                <button type="button" class="btn btn-outline-danger">Cancelar reserva</button>
+                <form class="formulario">
+                    <div class="mb-3">
+                      <label class="form-label">Ingrese su Rut</label>
+                      <input type="number" class="form-control">
+                      <div class="form-text">Sin puntos ni digito verificador.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Ingrese el Id de su vuelo</label>
+                        <input type="number" class="form-control">
+                      </div>
+                    <button type="submit" class="btn btn-outline-danger">Cancelar reserva</button>
+                </form>
             </div>
         </div>
     </div>

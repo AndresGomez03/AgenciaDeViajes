@@ -31,9 +31,6 @@ btn_reg.addEventListener("click", (e) => {
 
 // Mostrar vuelos disponibles en pantalla
 
-
-
-
 fetch("http://localhost:3000/vuelo")
     .then(res => res.json())
     .then(datos => mostrarv(datos)) //aqui llamo a la funcion mostrar y me renderisa los datos 
@@ -60,9 +57,52 @@ const mostrarv = (datos)=>{
     });
 } 
 
+// REALIZAR RESERVA
+
+const btn_reservar = document.getElementById('btn_reservar');
+
+btn_reg.addEventListener("click", (e) => {
+    e.preventDefault();
+    const rut_reserva = document.getElementById("rut_reserva");
+    const id_vuelo_reserva = document.getElementById("id_vuelo_reserva");
+    console.log(nombre_ingresar.innerText);
+
+    fetch("http://localhost:3000/reservar", {method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        rut: rut_reserva.value,
+        id_vuelo: id_vuelo_reserva.value
+    })})
+    .then(res => res.json())
+    .then(datos => console.log(datos))
+});
+
+// CONSULTAR RESERVA
+
+const btn_consulta = document.getElementById('btn_consulta');
+
+btn_reg.addEventListener("click", (e) => {
+    e.preventDefault();
+    const rut_consulta_reserva = document.getElementById("rut_consulta_reserva");
+    const id_vuelo_consulta = document.getElementById("id_vuelo_consulta");
+
+    fetch("http://localhost:3000/consultareserva", {method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        rut: rut_consulta_reserva.value,
+        id_vuelo: id_vuelo_consulta.value
+    })})
+    .then(res => res.json())
+    .then(datos => console.log(datos))
+});
+
 // Mostrar la reserva consultada por el cliente
 
-fetch("http://localhost:3000/vuelo")
+fetch("http://localhost:3000/consultareserva")
     .then(res => res.json())
     .then(datos => mostrarv(datos)) //aqui llamo a la funcion mostrar y me renderisa los datos 
     .catch(error => console.log(error));
@@ -81,7 +121,7 @@ const cons_reserva = (datos_reserva)=>{
         <li class="list-group-item">${elemento.id_vuelo}</li>
         
         `
-
+        container.appendChild(col);
     })
     
 }

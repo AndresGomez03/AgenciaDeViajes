@@ -64,7 +64,7 @@
                         <input type="number" class="form-control" id="id_vuelo_reserva">
                       </div>
                       <div><a href="mostrarvuelos.html" target="_blank"><button type="button" class="btn btn-outline-dark">Mostrar vuelos disponibles</button></a></div>
-                    <button type="submit" class="btn btn-outline-success">Realizar reserva</button>
+                    <button type="submit" class="btn btn-outline-success" id="btn_reservar">Realizar reserva</button>
                 </form>
             </div>
             <div class="opcion">
@@ -77,7 +77,11 @@
                       <input type="number" class="form-control" id="rut_consulta_reserva">
                       <div class="form-text">Sin puntos ni digito verificador.</div>
                     </div>
-                    <button type="submit" class="btn btn-outline-success">Consultar</button>
+                    <div class="mb-3">
+                      <label class="form-label">Ingrese la id del vuelo</label>
+                      <input type="number" class="form-control" id="id_vuelo_consulta">
+                    </div>
+                    <button type="submit" class="btn btn-outline-success" id="btn_consulta">Consultar</button>
                 </form>
             </div>
             <div class="opcion">

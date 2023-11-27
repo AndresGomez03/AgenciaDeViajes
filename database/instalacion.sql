@@ -4,7 +4,7 @@ create database agenciaviajes;
 
 -- CREAR TABLAS
 CREATE TABLE cliente (
-    rut INT NOT NULL UNSIGNED AUTO_INCREMENT,
+    rut INT UNSIGNED NOT NULL AUTO_INCREMENT,
     nombre_cliente VARCHAR(50),
     Apellido_paterno VARCHAR(30),
     Apellido_materno VARCHAR(30),
@@ -13,7 +13,7 @@ CREATE TABLE cliente (
 );
 
 CREATE TABLE vuelo (
-    id_vuelo INT NOT NULL UNSIGNED AUTO_INCREMENT,
+    id_vuelo INT UNSIGNED NOT NULL AUTO_INCREMENT,
     hora_partida DATETIME,
     hora_llegada DATETIME,
     ciudad_origen VARCHAR(50),
@@ -25,14 +25,14 @@ CREATE TABLE vuelo (
 );
 
 CREATE TABLE reserva (
-    id_reserva INT NOT NULL UNSIGNED AUTO_INCREMENT,	
+    id_reserva INT UNSIGNED NOT NULL AUTO_INCREMENT,	
     id_estado_reserva INT NOT NULL default 1,
     rut	INT NOT NULL,
     id_vuelo INT NOT NULL
 );
 
 CREATE TABLE estado_reserva (
-    id_estado_reserva INT NOT NULL UNSIGNED AUTO_INCREMENT,
+    id_estado_reserva INT UNSIGNED NOT NULL AUTO_INCREMENT,
     descripcion_estado VARCHAR(50)
 );
 

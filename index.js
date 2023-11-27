@@ -24,10 +24,13 @@ app.get('/vuelo',async(req,res)=>{
 
 // REGISTRAR CLIENTE
 
-app.get('/agregar', async(req,res)=>{
-    const {rut} = req.body;
-    const [resultado] = await pool.query('select * from cliente where rut = (?) and nombre_cliente = (?) and apellido_paterno = (?) and apellido_materno = (?) and correo = (?) and n_telefono = (?)',[rut,nombre,app,apm,correo,telefono]);
+app.post('/agregar/:rut/:nombre/:app/:apm/:correo/:telefono', async(req,res)=>{
+    const [resultado] = await pool.query('insert into cliente (rut, nombre_cliente, apellido_paterno, apellido_materno, correo, n_telefono) values (?,?,?,?,?,?)',[req.params.rut,req.params.nombre,req.params.app,req.params.apm,req.params.correo,req.params.telefono]);
     res.send(resultado);
+})
+
+app.get('/consultareserva/:rut/:idvuelo', async(req,res)=>{
+    const [resultado] = await pool.query('select * from reserva where rut = (?) and id_vuelo = (?)',[req.params.rut , req.params.idvuelo]);
 })
 
 app.listen('3000',function(){

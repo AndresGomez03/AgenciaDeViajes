@@ -1,17 +1,19 @@
 
 //REGISTRAR CLIENTE
 
-const rut_ingresar = document.querySelector("#rut_ingresar");
-const nombre_ingresar = document.querySelector('#nom_ingresar');
-const app_ingresar = document.querySelector('#app_ingresar');
-const apm_ingresar = document.querySelector('#apm_ingresar');
-const correo_ingresar = document.querySelector('#correo_ingresar');
-const telefono_ingresar = document.querySelector('#telefono_ingresar');
-const btn_reg = document.querySelector('#btn_reg_cli');
+/* const btn_reg = document.getElementById('#btn_reg_cli');
 
-//btn_reg.addEventListener('click', function(){
-  //  window.location.href = `agregar/${rut_ingresar.value}/${nombre_ingresar.value}`
-//})
+btn_reg.addEventListener("click", function(){
+    const rut_ingresar = document.getElementById("#rut_ingresar");
+    const nombre_ingresar = document.getElementById('#nom_ingresar');
+    const app_ingresar = document.getElementById('#app_ingresar');
+    const apm_ingresar = document.getElementById('#apm_ingresar');
+    const correo_ingresar = document.getElementById('#correo_ingresar');
+    const telefono_ingresar = document.getElementById('#telefono_ingresar');
+    const btn_reg = document.getElementById('#btn_reg_cli');
+    window.location.href = `agregar/${rut_ingresar.value}/${nom_ingresar.value}/${app_ingresar.value}/${apm_ingresar.value}/${correo_ingresar.value}/${telefono_ingresar.value}`
+    console.log("Estoy siendo agregado")
+}) */
 
 // Mostrar vuelos disponibles en pantalla
 

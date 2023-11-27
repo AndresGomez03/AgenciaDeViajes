@@ -41,7 +41,6 @@ const mostrarv = (datos)=>{
         `
         contenedor.appendChild(col);
     });
-    
 } 
 
 // Mostrar la reserva consultada por el cliente

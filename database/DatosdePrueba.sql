@@ -9,15 +9,8 @@ VALUES
   (21793482, 'Jose', 'Enriquez', 'López', 'jose@gmail.com', 156773234),
   (21340274, 'Ana', 'Rodríguez', 'Hernández', 'ana@gmail.com', 123456789),
   (87654321, 'Carlos', 'Sánchez', 'Martín', 'carlos@gmail.com', 234567890),
-  (76543210, 'Luisa', 'García', 'Díaz', 'luisa@gmail.com', 345678901);
-  
-  INSERT INTO cliente (rut, nombre_cliente, apellido_paterno, apellido_materno, correo, n_telefono) 
-VALUES
-  (12345628, 'Alexis', 'Sanchez', 'Gómez', 'alexis@gmail.com', 982354321);
-
-
-  INSERT INTO cliente (rut, nombre_cliente, apellido_paterno, apellido_materno, correo, n_telefono) 
-VALUES
+  (76543210, 'Luisa', 'García', 'Díaz', 'luisa@gmail.com', 345678901),
+  (12345628, 'Alexis', 'Sanchez', 'Gómez', 'alexis@gmail.com', 982354321),
   (12345621, 'Sebas', 'Gonzalez', 'Gómez', 'Seba@gmail.com', 982354621);
   
 INSERT INTO estado_reserva (id_estado_reserva, descripcion_estado)

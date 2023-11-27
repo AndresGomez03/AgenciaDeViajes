@@ -82,19 +82,40 @@
                       <input type="number" class="form-control" id="id_vuelo_consulta">
                     </div>
                     <button type="submit" class="btn btn-outline-success" id="btn_consulta">Consultar</button>
+                    <a href="consultareserva.html" target="_blank"><button type="button" class="btn btn-outline-success">Mostrar consulta</button></a>
                 </form>
             </div>
             <div class="opcion">
               <!-- MODIFICAR DATOS DEL CLIENTE ------------------------------------------------------------------------------ -->
                 <h5>Modificar datos cliente</h5>
-                <p>Esto le permitirá actualizar su información.</p>
+                <p>Ingrese su rut y luego los datos que va a modificar.</p>
                 <form class="formulario">
                     <div class="mb-3">
                       <label class="form-label">Ingrese su Rut</label>
-                      <input type="number" class="form-control" id="rut_modificar_datos">
+                      <input type="number" class="form-control" id="rut_modificar">
                       <div id="emailHelp" class="form-text">Sin puntos ni digito verificador.</div>
                     </div>
-                    <div><a href="modificardatos.html" target="_blank"><button type="button" class="btn btn-outline-dark">Modificar</button></a></div>
+                    <div class="mb-3">
+                      <label class="form-label">Ingrese su Nombre</label>
+                      <input type="text" class="form-control" id="nom_modificar">
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Ingrese su Apellido Paterno</label>
+                      <input type="text" class="form-control" id="app_modificar">
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Ingrese su Apellido Materno</label>
+                      <input type="text" class="form-control" id="apm_modificar">
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Ingrese su correo electronico</label>
+                      <input type="email" class="form-control" id="correo_modificar">
+                    </div>
+                  <div class="mb-3">
+                    <label class="form-label">Ingrese su numero de telefono</label>
+                    <input type="number" class="form-control" id="telefono_modificar">
+                  </div>
+                    <div><button type="button" class="btn btn-outline-dark" id="btn_mod">Modificar</button></div>
                 </form>
             </div>
             <div class="opcion">
@@ -104,14 +125,14 @@
                 <form class="formulario">
                     <div class="mb-3">
                       <label class="form-label">Ingrese su Rut</label>
-                      <input type="number" class="form-control" id="rut_cancelar_reserva">
+                      <input type="number" class="form-control" id="rut_cancelar">
                       <div class="form-text">Sin puntos ni digito verificador.</div>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Ingrese el Id de su vuelo</label>
-                        <input type="number" class="form-control" id="id_vuelo_cancelar_reserva">
+                        <input type="number" class="form-control" id="id_vuelo_cancelar">
                       </div>
-                    <button type="submit" class="btn btn-outline-danger" id="cancelar_reserva">Cancelar reserva</button>
+                    <button type="submit" class="btn btn-outline-danger" id="btn_cancel">Cancelar reserva</button>
                 </form>
             </div>
         </div>

@@ -38,26 +38,28 @@ app.post('/reservar', async(req,res)=>{
     res.send(resultado);
 })
 
-// CONSULTAR RESERVA     LISTO   fALTA PROBARLO
+// CONSULTAR RESERVA     LISTO   fALTA PROBARLO FUNCIONA
+
 
 app.get('/consultareserva', async(req,res)=>{
     const {rut,id_vuelo} = req.body;
     const [resultado] = await pool.query('select * from reserva where rut = (?) and id_vuelo = (?)',[rut, id_vuelo]);
+    res.send(resultado);
 })
 
 // MODIFICAR DATOS
 
-app.put('/agregar', async(req,res)=>{
-    const {rut} = req.body;
-    const [resultado] = await pool.query('update cliente set nombre_cliente=(?) , apellido_paterno=(?), apellido_materno=(?), correo=(?), n_telefono=(?) where rut=(?) values (?,?,?,?,?,?)',[req.params.rut,req.params.nombre,req.params.app,req.params.apm,req.params.correo,req.params.telefono]);
+app.put('/modificar', async(req,res)=>{
+    const {rut,nombre_cliente,apellido_paterno,apellido_materno,correo,n_telefono} = req.body;
+    const [resultado] = await pool.query('update cliente set nombre_cliente=(?), apellido_paterno=(?), apellido_materno=(?), correo=(?), n_telefono=(?) where rut=(?)',[nombre_cliente,apellido_paterno,apellido_materno,correo,n_telefono,rut]);
     res.send(resultado);
 })
 
-// CANCELAR RESERVA
+// CANCELAR RESERVA         LISTO
 
 app.delete('/cancelar', async(req,res)=>{
     const {rut,id_vuelo} = req.body;
-    const [resultado] = await pool.query('delete * from reserva where rut = (?) and id_vuelo = (?)',[rut, id_vuelo]);
+    const [resultado] = await pool.query('delete from reserva where rut = (?) and id_vuelo = (?)',[rut, id_vuelo]);
     res.send(resultado);
 })
 

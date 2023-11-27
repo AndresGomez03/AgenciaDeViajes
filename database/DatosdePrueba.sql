@@ -32,7 +32,8 @@ VALUES
 (9, '2023-12-09 16:00:00', '2023-12-09 19:00:00', 'Guatemala', 'Managua', 'La Aurora', 'Augusto C. Sandino', 'Guatemala', 'Nicaragua'),
 (10, '2023-12-10 07:00:00', '2023-12-10 10:00:00', 'Kingston', 'Santo Domingo', 'Norman Manley', 'Las Américas', 'Jamaica', 'República Dominicana');
 
-INSERT INTO reserva
-VALUES (0, 1, 12345678, 1),
-(1, 2, 23456789, 1),
-(2, 3, 34567890, 1);
+INSERT INTO reserva (id_reserva, id_estado_reserva, rut, id_vuelo)
+VALUES 
+(0, 1, 12345678, 1),
+(1, 1, 23456789, 2),
+(2, 1, 34567890, 3);

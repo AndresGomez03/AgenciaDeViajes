@@ -25,10 +25,10 @@ CREATE TABLE vuelo (
 );
 
 CREATE TABLE reserva (
-    id_reserva INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,	
-    id_estado_reserva INT NOT NULL,
-    rut	INT NOT NULL,
-    id_vuelo INT NOT NULL
+    id_reserva INT,	
+    id_estado_reserva INT,
+    rut	INT,
+    id_vuelo INT
 );
 
 CREATE TABLE estado_reserva (

@@ -22,7 +22,7 @@ app.get('/vuelo',async(req,res)=>{
     res.send(resultado);
 })
 
-// REGISTRAR CLIENTE
+// REGISTRAR CLIENTE    LISTISIMO
 
 app.post('/agregar', async(req,res)=>{
     const {rut,nombre_cliente,apellido_paterno,apellido_materno,correo,n_telefono} = req.body;
@@ -30,7 +30,7 @@ app.post('/agregar', async(req,res)=>{
     res.send(resultado);
 })
 
-// REALIZAR RESERVA
+// REALIZAR RESERVA     OJO CON EL ID_RESERVA TIENE QUE SER AUTOIMCREMENTABLE
 
 app.post('/reservar', async(req,res)=>{
     const {rut,id_vuelo} = req.body;
@@ -38,27 +38,26 @@ app.post('/reservar', async(req,res)=>{
     res.send(resultado);
 })
 
-// CONSULTAR RESERVA
+// CONSULTAR RESERVA     LISTO   fALTA PROBARLO
 
-app.get('/consultareserva/:rut/:idvuelo', async(req,res)=>{
-    const [resultado] = await pool.query('select * from reserva where rut = (?) and id_vuelo = (?)',[req.params.rut , req.params.idvuelo]);
+app.get('/consultareserva', async(req,res)=>{
+    const {rut,id_vuelo} = req.body;
+    const [resultado] = await pool.query('select * from reserva where rut = (?) and id_vuelo = (?)',[rut, id_vuelo]);
 })
 
 // MODIFICAR DATOS
 
-app.get('')
-
-app.post('/agregar/:rut/:nombre/:app/:apm/:correo/:telefono', async(req,res)=>{
-    const [resultado] = await pool.query('insert into cliente (rut, nombre_cliente, apellido_paterno, apellido_materno, correo, n_telefono) values (?,?,?,?,?,?)',[req.params.rut,req.params.nombre,req.params.app,req.params.apm,req.params.correo,req.params.telefono]);
+app.put('/agregar', async(req,res)=>{
+    const {rut} = req.body;
+    const [resultado] = await pool.query('update cliente set nombre_cliente=(?) , apellido_paterno=(?), apellido_materno=(?), correo=(?), n_telefono=(?) where rut=(?) values (?,?,?,?,?,?)',[req.params.rut,req.params.nombre,req.params.app,req.params.apm,req.params.correo,req.params.telefono]);
     res.send(resultado);
 })
 
-app.put('modificar/:rut/')
-
 // CANCELAR RESERVA
 
-app.delete('cancelar/:rut/:idvuelo', async(req,res)=>{
-    const [resultado] = await pool.query('delete * from reserva where rut = (?) and id_vuelo = (?)',[req.params.rut , req.params.idvuelo]);
+app.delete('/cancelar', async(req,res)=>{
+    const {rut,id_vuelo} = req.body;
+    const [resultado] = await pool.query('delete * from reserva where rut = (?) and id_vuelo = (?)',[rut, id_vuelo]);
     res.send(resultado);
 })
 

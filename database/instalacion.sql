@@ -1,10 +1,9 @@
 create database agenciaviajes;
-
 -- Recordar mantener el esquema de la bd como default
 
 -- CREAR TABLAS
 CREATE TABLE cliente (
-    rut INT AUTO_INCREMENT PRIMARY KEY,
+    rut INT PRIMARY KEY,
     nombre_cliente VARCHAR(50),
     Apellido_paterno VARCHAR(30),
     Apellido_materno VARCHAR(30),

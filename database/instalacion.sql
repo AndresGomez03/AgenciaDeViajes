@@ -4,11 +4,7 @@ create database agenciaviajes;
 
 -- CREAR TABLAS
 CREATE TABLE cliente (
-<<<<<<< HEAD
     rut INT AUTO_INCREMENT PRIMARY KEY,
-=======
-    rut INT UNSIGNED NOT NULL PRIMARY KEY,
->>>>>>> b382e6907e3f8729d2e54851741bae3a9d404453
     nombre_cliente VARCHAR(50),
     Apellido_paterno VARCHAR(30),
     Apellido_materno VARCHAR(30),

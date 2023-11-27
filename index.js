@@ -30,7 +30,7 @@ app.post('/agregar', async(req,res)=>{
     res.send(resultado);
 })
 
-// REALIZAR RESERVA     OJO CON EL ID_RESERVA TIENE QUE SER AUTOIMCREMENTABLE
+// REALIZAR RESERVA     LISTO
 
 app.post('/reservar', async(req,res)=>{
     const {rut,id_vuelo} = req.body;

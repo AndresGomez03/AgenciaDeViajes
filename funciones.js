@@ -26,6 +26,74 @@ const mostrarv = (datos)=>{
     });
 } 
 
+// REALIZAR RESERVA     LISTO
+
+const btn_reservar = document.getElementById('btn_reservar');
+
+btn_reservar.addEventListener("click", (e) => {
+    e.preventDefault();
+    const rut_reserva = document.getElementById("rut_reserva");
+    const id_vuelo_reserva = document.getElementById("id_vuelo_reserva");
+
+    fetch("http://localhost:3000/reservar", {method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        rut: rut_reserva.value,
+        id_vuelo: id_vuelo_reserva.value
+    })})
+    .then(res => res.json())
+    .then(datos => console.log(datos))
+});
+
+// CONSULTAR RESERVA        :(
+
+const btn_consulta = document.getElementById('btn_consulta');
+
+btn_consulta.addEventListener("click", (e) => {
+    e.preventDefault();
+    const rut_consulta_reserva = document.getElementById("rut_consulta_reserva");
+    const id_vuelo_consulta = document.getElementById("id_vuelo_consulta");
+    fetch("http://localhost:3000/consultareserva", {method: 'GET',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        rut: rut_consulta_reserva.value,
+        id_vuelo: id_vuelo_consulta.value
+    })})
+    .then(res => res.json())
+    .then(datos => console.log(datos))
+});
+
+// MODIFICAR CLIENTE        LISTO
+
+const btn_mod = document.getElementById('btn_mod');
+
+btn_mod.addEventListener("click", (e) => {
+    e.preventDefault();
+    const rut_modificar = document.getElementById("rut_modificar");
+    const nom_modificar = document.getElementById("nom_modificar");
+    const app_modificar = document.getElementById("app_modificar");
+    const apm_modificar = document.getElementById("apm_modificar");
+    const correo_modificar = document.getElementById("correo_modificar");
+    const telefono_modificar = document.getElementById("telefono_modificar");
+    fetch("http://localhost:3000/modificar", {method: 'PUT',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        rut: rut_modificar.value,
+        nombre_cliente: nom_modificar.value,
+        apellido_paterno: app_modificar.value,
+        apellido_materno: apm_modificar.value,
+        correo: correo_modificar.value,
+        n_telefono: telefono_modificar.value
+    })})
+    .then(res => res.json())
+    .then(datos => console.log(datos))
+});
 
 //REGISTRAR CLIENTE         LISTO
 
@@ -59,53 +127,13 @@ btn_reg.addEventListener("click", (e) => {
 
 
 
-// REALIZAR RESERVA     LISTO
 
-const btn_reservar = document.getElementById('btn_reservar');
 
-btn_reservar.addEventListener("click", (e) => {
-    e.preventDefault();
-    const rut_reserva = document.getElementById("rut_reserva");
-    const id_vuelo_reserva = document.getElementById("id_vuelo_reserva");
-    console.log(nombre_ingresar.innerText);
-
-    fetch("http://localhost:3000/reservar", {method: 'POST',
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-        rut: rut_reserva.value,
-        id_vuelo: id_vuelo_reserva.value
-    })})
-    .then(res => res.json())
-    .then(datos => console.log(datos))
-});
-
-// CONSULTAR RESERVA
-
-const btn_consulta = document.getElementById('btn_consulta');
-
-btn_consulta.addEventListener("click", (e) => {
-    e.preventDefault();
-    const rut_consulta_reserva = document.getElementById("rut_consulta_reserva");
-    const id_vuelo_consulta = document.getElementById("id_vuelo_consulta");
-    fetch("http://localhost:3000/consultareserva", {method: 'GET',
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-        rut: rut_consulta_reserva.value,
-        id_vuelo: id_vuelo_consulta.value,
-    })})
-    .then(res => res.json())
-    .then(datos => console.log(datos))
-});
-
-// Mostrar la reserva consultada por el cliente
+// Mostrar la reserva consultada por el cliente     :(
 
 fetch("http://localhost:3000/consultareserva")
     .then(res => res.json())
-    .then(datos_reserva => cons_reserva(datos_reserva)) //aqui llamo a la funcion mostrar y me renderisa los datos 
+    .then(datos_reserva => cons_reserva(datos_reserva)) 
     .catch(error => console.log(error));
 
 
@@ -127,33 +155,7 @@ const cons_reserva = (datos_reserva)=>{
     
 }
 
-// MODIFICAR CLIENTE        LISTO
 
-const btn_mod = document.getElementById('btn_mod');
-
-btn_mod.addEventListener("click", (e) => {
-    e.preventDefault();
-    const rut_modificar = document.getElementById("rut_modificar");
-    const nom_modificar = document.getElementById("nom_modificar");
-    const app_modificar = document.getElementById("app_modificar");
-    const apm_modificar = document.getElementById("apm_modificar");
-    const correo_modificar = document.getElementById("correo_modificar");
-    const telefono_modificar = document.getElementById("telefono_modificar");
-    fetch("http://localhost:3000/modificar", {method: 'PUT',
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-        rut: rut_modificar.value,
-        nombre_cliente: nom_modificar.value,
-        apellido_paterno: app_modificar.value,
-        apellido_materno: apm_modificar.value,
-        correo: correo_modificar.value,
-        n_telefono: telefono_modificar.value
-    })})
-    .then(res => res.json())
-    .then(datos => console.log(datos))
-});
 
 // CANCELAR RESERVA     LISTO
 

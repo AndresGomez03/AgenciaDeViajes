@@ -1,21 +1,38 @@
 
 //REGISTRAR CLIENTE
 
-/* const btn_reg = document.getElementById('#btn_reg_cli');
+const btn_reg = document.getElementById('btn_reg_cli');
 
-btn_reg.addEventListener("click", function(){
-    const rut_ingresar = document.getElementById("#rut_ingresar");
-    const nombre_ingresar = document.getElementById('#nom_ingresar');
-    const app_ingresar = document.getElementById('#app_ingresar');
-    const apm_ingresar = document.getElementById('#apm_ingresar');
-    const correo_ingresar = document.getElementById('#correo_ingresar');
-    const telefono_ingresar = document.getElementById('#telefono_ingresar');
-    const btn_reg = document.getElementById('#btn_reg_cli');
-    window.location.href = `agregar/${rut_ingresar.value}/${nom_ingresar.value}/${app_ingresar.value}/${apm_ingresar.value}/${correo_ingresar.value}/${telefono_ingresar.value}`
-    console.log("Estoy siendo agregado")
-}) */
+btn_reg.addEventListener("click", (e) => {
+    e.preventDefault();
+    const rut_ingresar = document.getElementById("rut_ingresar");
+    const nombre_ingresar = document.getElementById("nom_ingresar");
+    const app_ingresar = document.getElementById('app_ingresar');
+    const apm_ingresar = document.getElementById('apm_ingresar');
+    const correo_ingresar = document.getElementById('correo_ingresar');
+    const telefono_ingresar = document.getElementById('telefono_ingresar');
+    console.log(nombre_ingresar.innerText);
+
+    fetch("http://localhost:3000/agregar", {method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        rut: rut_ingresar.value,
+        nombre_cliente: nombre_ingresar.value,
+        apellido_paterno: app_ingresar.value,
+        apellido_materno: apm_ingresar.value,
+        correo: correo_ingresar.value,
+        n_telefono: telefono_ingresar.value
+    })})
+    .then(res => res.json())
+    .then(datos => console.log(datos))
+});
 
 // Mostrar vuelos disponibles en pantalla
+
+
+
 
 fetch("http://localhost:3000/vuelo")
     .then(res => res.json())
@@ -63,9 +80,9 @@ const cons_reserva = (datos_reserva)=>{
         <li class="list-group-item">${elemento.rut}</li>
         <li class="list-group-item">${elemento.id_vuelo}</li>
         
-    
         `
 
     })
     
 }
+
